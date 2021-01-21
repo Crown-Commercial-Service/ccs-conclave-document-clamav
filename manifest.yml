@@ -1,0 +1,11 @@
+applications:
+  - name: ccs-conclave-document-clamav
+    disk_quota: 2gb
+    docker:
+      image: forward3d/clamavd
+    instances: 1
+    memory: 2048M
+    routes:
+      - route: ccs-conclave-document-clamav.apps.internal
+    env:
+      ENVIRONMENT_VARIABLE_NAME: http://ccs-conclave-document-clamav.apps.internal:3310
