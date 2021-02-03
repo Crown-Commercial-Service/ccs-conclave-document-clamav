@@ -2,9 +2,9 @@ applications:
   - name: ccs-conclave-document-clamav
     disk_quota: 2gb
     docker:
-      image: forward3d/clamavd
+      image: mkodockx/docker-clamav:buster-slim
     instances: 1
-    memory: 2048M
+    memory: 2gb
     routes:
       - route: ccs-conclave-document-clamav.apps.internal
     env:
