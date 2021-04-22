@@ -6,6 +6,6 @@ applications:
     instances: 1
     memory: 2gb
     routes:
-      - route: ccs-conclave-document-clamav-dev.apps.internal
+      - route: ccs-conclave-document-clamav.apps.internal
     env:
-      ENVIRONMENT_VARIABLE_NAME: http://ccs-conclave-document-clamav-dev.apps.internal:3310
+      ENVIRONMENT_VARIABLE_NAME: http://ccs-conclave-document-clamav.apps.internal:3310
