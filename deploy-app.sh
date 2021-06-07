@@ -49,9 +49,6 @@ while getopts "a:u:p:o:s:h:f" opt; do
   esac
 done
 
-echo "$CF_PASS" 
-echo "$CF_USER"
-
 # if required arguments are not passed exit with usage
 if [[ -z "$CF_USER" || -z "$CF_PASS" || -z "$CF_ORG" || -z "$CF_SPACE" ]]; then
   echo "Some or all of the required parameters are empty";
