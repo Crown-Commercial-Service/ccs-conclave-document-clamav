@@ -2,7 +2,6 @@ language: generic
 env:
   global:
   - CF_ORG=ccs-document-upload
-  - secure: "UOA85dHekGKxjC8gNYDWPBEeXMKB5txvj3/GTf1wHEm8pPuz0G408O/PcONJ3tFk5UjQ5Y6h3snGwoVKj2rsopwXVlnMp9GFtJR0NAITZqGcJ7RjAIFjImIJhlz6VVtfiAsnmX+G8z8Rq5zrdefGBYEd4GV+Q2Vc5NbqXc06GECT7fAm5+omqw0nDp+0QfY6uP+AAyjSHBJkFzxuK1btnkZT9qheSvoBHkleNUUz6mmmUtqxu5OHEEHbL/zX90p4kAvRUu6X0U1knywwwJ1Urnu+PvRoNUEkiJm+jd9ZA23IL5jRoiopZYw9J1o34xtcsEe0eGwT9IeWdhvohXXCeeH6OKVuABe549BqXSuoP3bXcxz+7BF+wWoP1urmsgIJ9Bm1oB6vNwTp/TnAda//QJRPwc3DaZnB14IiYMHr+dwfRMCf0Cx005hQF2hFgnOzPvUbfJZKLLxvGcbOH2N3LXuXNjl3xMfqFvKQbyH4D5MzXxk7wkRrOP0N2F+qDWalN+09YlPzrVi/XOkP5U5k3mYUGAyT1IwJGfktGAdEmuByZFuYGSoror7Jo1xCb59rewBTRV5p3sciGG8ie/2cHZPIwWnRdgSvTI0QPqxThxDtejk+/HZRy0w1NgjOLGWrMx8yBqtiJgvBJsHpREAUkH4R1jo8ZK/nv6cN0PqLcWI="
 before_deploy:
   - echo "install cloudfoundry cli"
   - wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
