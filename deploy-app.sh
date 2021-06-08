@@ -86,6 +86,12 @@ then
   fi
 fi
 
+# environment variable(s) for manifest
+MEMORY_LIMIT="2gb"
+
+echo "SCRIPT PATH::::::"
+echo "$SCRIPT_PATH"
+
 cd "$SCRIPT_PATH" || exit
 
 # login and target space

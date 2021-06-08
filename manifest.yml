@@ -4,7 +4,7 @@ applications:
     docker:
       image: mkodockx/docker-clamav:buster-slim
     instances: 1
-    memory: 2gb
+    memory: MEMORY_LIMIT
     routes:
       - route: ccs-conclave-document-clamav-CF_SPACE.apps.internal
     env:
