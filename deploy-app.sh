@@ -108,7 +108,8 @@ done
 
 cd .. || exit
 
-for entry in "$SCRIPT_PATH"/*
+current='./*'
+for entry in $current
 do
   echo "$entry"
 done
