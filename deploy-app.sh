@@ -109,7 +109,7 @@ done
 cd .. || exit
 
 current='ls ./*'
-for entry in $current
+for entry in pwd
 do
   echo "$entry"
 done
