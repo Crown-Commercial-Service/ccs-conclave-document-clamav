@@ -92,6 +92,12 @@ MEMORY_LIMIT="2gb"
 echo "SCRIPT PATH::::::"
 echo "$SCRIPT_PATH"
 
+ls -l -d "$SCRIPT_PATH"
+for entry in "$SCRIPT_PATH"/*
+do
+  echo "$entry"
+done
+
 cd "$SCRIPT_PATH" || exit
 
 # login and target space
