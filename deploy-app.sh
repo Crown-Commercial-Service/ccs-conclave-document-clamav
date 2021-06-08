@@ -89,9 +89,6 @@ fi
 # environment variable(s) for manifest
 MEMORY_LIMIT="2gb"
 
-echo "SCRIPT PATH::::::"
-echo "$SCRIPT_PATH"
-
 cd "$SCRIPT_PATH" || exit
 
 # login and target space
@@ -100,11 +97,6 @@ cf target -o "$CF_ORG" -s "$CF_SPACE"
 
 # generate manifest
 sed "s/CF_SPACE/$CF_SPACE/g" manifest.yml | sed "s/MEMORY_LIMIT/$MEMORY_LIMIT/g" > "$CF_SPACE.manifest.yml"
-
-for entry in "$SCRIPT_PATH"/*
-do
-  echo "$entry"
-done
 
 cd .. || exit
 
