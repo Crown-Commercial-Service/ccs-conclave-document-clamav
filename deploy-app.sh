@@ -86,6 +86,9 @@ then
   fi
 fi
 
+# environment variable(s) for manifest
+MEMORY_LIMIT="2gb"
+
 cd "$SCRIPT_PATH" || exit
 
 # login and target space
@@ -98,4 +101,4 @@ sed "s/CF_SPACE/$CF_SPACE/g" manifest.yml | sed "s/MEMORY_LIMIT/$MEMORY_LIMIT/g"
 cd .. || exit
 
 # deploy
-cf push ccs-conclave-document-clamav -f "$CF_SPACE".manifest.yml --strategy rolling
+cf push ccs-conclave-document-clamav -f "$SCRIPT_PATH"/"$CF_SPACE".manifest.yml --strategy rolling
