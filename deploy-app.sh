@@ -108,7 +108,7 @@ done
 
 cd .. || exit
 
-current='./*'
+current='ls ./*'
 for entry in $current
 do
   echo "$entry"
