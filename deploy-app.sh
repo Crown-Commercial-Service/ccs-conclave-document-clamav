@@ -108,11 +108,5 @@ done
 
 cd .. || exit
 
-current='ls ./*'
-for entry in pwd
-do
-  echo "$entry"
-done
-
 # deploy
-cf push ccs-conclave-document-clamav -f "$CF_SPACE".manifest.yml --strategy rolling
+cf push ccs-conclave-document-clamav -f "$SCRIPT_PATH"/"$CF_SPACE".manifest.yml --strategy rolling
