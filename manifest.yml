@@ -3,6 +3,7 @@ applications:
     disk_quota: 2gb
     docker:
       image: mkodockx/docker-clamav:buster-slim
+      username: ccscdutravisdeploy
     instances: 1
     memory: MEMORY_LIMIT
     routes:
