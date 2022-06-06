@@ -61,7 +61,7 @@ then
 fi
 BRANCH=$(git symbolic-ref --short HEAD)
 echo "INFO: deploying $BRANCH to $CF_SPACE"
-# release_branch_re='^release/.*'
+
 if [[ ! "$FORCE" == "yes" ]]
 then
 
@@ -84,6 +84,26 @@ then
       exit 1
     fi
   fi
+
+  if [[ "$CF_SPACE" == "pre-production" ]]
+  then
+    if [[ ! "$BRANCH" == "preprod" ]]
+    then
+      echo "We only deploy 'preprod' branches to $CF_SPACE"
+      echo "if you want to deploy $BRANCH to $CF_SPACE use -f"
+      exit 1
+    fi
+  fi
+
+  if [[ "$CF_SPACE" == "production" ]]
+  then
+    if [[ ! "$BRANCH" == "main" ]]
+    then
+      echo "We only deploy 'main' branches to $CF_SPACE"
+      echo "if you want to deploy $BRANCH to $CF_SPACE use -f"
+      exit 1
+    fi
+  fi
 fi
 
 # environment variable(s) for manifest
@@ -101,4 +121,4 @@ sed "s/CF_SPACE/$CF_SPACE/g" manifest.yml | sed "s/MEMORY_LIMIT/$MEMORY_LIMIT/g"
 cd .. || exit
 
 # deploy
-cf push ccs-conclave-document-clamav -f "$SCRIPT_PATH"/"$CF_SPACE".manifest.yml --strategy rolling
+cf push ccs-conclave-document-clamav -f "$SCRIPT_PATH"/"$CF_SPACE".manifest.yml
